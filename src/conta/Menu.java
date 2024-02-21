@@ -1,25 +1,40 @@
 package conta;
 
 import conta.model.Conta;
+import conta.model.ContaCorrente;
+import conta.model.ContaPoupanca;
 
 public class Menu {
 
 	public static void main(String[] args) {
+		
+		//Teste da Classe Conta
+		Conta c1 = new Conta(2, 123, 1, "Tadeu", 4000.0f);
 
-		// Teste da Calsse Conta
-		Conta conta1 = new Conta(1456, 123, 1, "Larissa Sanches", 50000.0f);
+		c1.visualizar();
+		c1.sacar(1200.0f);
+		c1.visualizar();
+		c1.depositar(5000.0f);
+		c1.visualizar();
 
-		conta1.visualizar();
-		conta1.setAgencia(456);
-		System.out.println(conta1.getAgencia());
 
-		if (conta1.sacar(1000))
-			System.out.println("\nSaque efetuado com sucesso. O novo saldo é de: " + conta1.getSaldo());
-		else
-			System.out.println("\nO Saldo é insuficiente!");
+		// Teste da Classe Conta Corrente
+		ContaCorrente cc1 = new ContaCorrente(32, 33, 1, "Tadeu", 4000.0f, 3000.0f);
 
-		conta1.depositar(1000);
-		System.out.println("\nO novo saldo é: " + conta1.getSaldo());
+		cc1.visualizar();
+		cc1.sacar(1200.0f);
+		cc1.visualizar();
+		cc1.depositar(5000.0f);
+		cc1.visualizar();
 
+		// Teste da Classe Conta Poupança
+
+		ContaPoupanca cp1 = new ContaPoupanca(3, 123, 2, "Victor", 14000.0f, 15);
+
+		cp1.visualizar();
+		cp1.sacar(1500.0f);
+		cp1.visualizar();
+		cp1.depositar(7000.0f);
+		cp1.visualizar();
 	}
 }
