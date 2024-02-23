@@ -18,14 +18,11 @@ public class ContaCorrente extends Conta {
 		this.limite = limite;
 	}
 
-	@Override
 	public boolean sacar(float valor) {
 		if (this.getSaldo() + this.getLimite() < valor) {
-			System.out.println("\nSaldo insuficiente");
 			return false;
 		}
 		this.setSaldo(this.getSaldo() - valor);
-		System.out.println("\n Valor sacado com sucesso, use com sabedoria");
 		return true;
 	}
 
